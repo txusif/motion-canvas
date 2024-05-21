@@ -72,7 +72,7 @@ export default makeScene2D(function* (view) {
           fill={"blue"}
         >
           <Txt fontSize={40} fontFamily={"outfit"} fill={"white"}>
-            Fitter Fabrication
+            Fitter-Fabrication
           </Txt>
         </Rect>
       </Layout>

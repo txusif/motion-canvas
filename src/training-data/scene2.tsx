@@ -1,8 +1,6 @@
 import { Layout, Txt, makeScene2D, Circle } from "@motion-canvas/2d";
 import { all, createRef, createSignal, waitFor } from "@motion-canvas/core";
 
-import { arc } from "@motion-canvas/2d/lib/utils";
-
 export default makeScene2D(function* (view) {
   const txt1Ref = createRef<Txt>();
   const txt2Ref = createRef<Txt>();
@@ -42,7 +40,7 @@ export default makeScene2D(function* (view) {
         y={-800}
         x={390}
       >
-        Pay slips
+        Payslips
       </Txt>
     </Layout>
   );
@@ -55,7 +53,7 @@ export default makeScene2D(function* (view) {
         x={390}
         width={440}
         height={440}
-        fill="#6DC5D1"
+        fill="#B4D4FF"
       >
         <Txt
           fontFamily={"outfit"}
@@ -75,7 +73,8 @@ export default makeScene2D(function* (view) {
         x={-390}
         width={440}
         height={440}
-        fill="#6DC5D1"
+        fill="#B4D4FF"
+        
       >
         <Txt
           fontFamily={"outfit"}

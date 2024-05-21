@@ -39,7 +39,7 @@ export default makeScene2D(function* (view) {
         letterSpacing={1}
 
       >
-        Highest 3rd month payslip
+        Highest third month payslip
       </Txt>
 
       <Layout ref={dahodLayoutRef} opacity={0}>
@@ -99,7 +99,7 @@ export default makeScene2D(function* (view) {
           y={-230}
           x={400}
         >
-          Batch B1
+          Batch-B1
         </Txt>
       </Layout>
 
@@ -161,13 +161,13 @@ export default makeScene2D(function* (view) {
           y={230}
           x={400}
         >
-          Batch B2
+          Batch-B2
         </Txt>
       </Layout>
     </Layout>
   );
 
-  yield* all(payslipTxtRef().opacity(1, 2), payslipTxtRef().scale(1.6, 2));
+  yield* all(payslipTxtRef().opacity(1, 2), payslipTxtRef().scale(1.5, 2));
   yield* all(dahodLayoutRef().opacity(1, 1), payslipTxtRef().opacity(0, 0.5));
 
   yield* all(
