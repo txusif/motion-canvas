@@ -1,11 +1,13 @@
 import { Circle, Img, Layout, Rect, Txt, makeScene2D } from "@motion-canvas/2d";
 import { all, createRef, waitFor } from "@motion-canvas/core";
 
-import sewing from "../../images/training-data-images/sewing.jpg";
-import fabrication from "../../images/training-data-images/fabrication.jpg";
-import solar from "../../images/training-data-images/solar.jpg";
-import trainees from "../../images/training-data-images/trainees.jpg";
-import ddugky from "../../images/training-data-images/ddugky.jpg";
+import {
+  ddugky,
+  fabrication,
+  sewing,
+  solar,
+  trainees,
+} from "../../images";
 
 export default makeScene2D(function* (view) {
   const sewingImgRef = createRef<Img>();

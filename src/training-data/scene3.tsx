@@ -1,6 +1,5 @@
 import {
   Circle,
-  Img,
   Layout,
   Line,
   Rect,
@@ -9,13 +8,8 @@ import {
 } from "@motion-canvas/2d";
 import { all, createRef, createSignal, waitFor } from "@motion-canvas/core";
 
-import sewing from "../../images/training-data-images/sewing.jpg";
 
 export default makeScene2D(function* (view) {
-  const mapImgRef = createRef<Img>();
-  const sewingImgRef = createRef<Img>();
-  const txtContainerRef = createRef<Layout>();
-  const sewingTxtRef = createRef<Rect>();
 
   const payslipTxtRef = createRef<Txt>();
   const B1TxtRef = createRef<Txt>();
@@ -26,7 +20,6 @@ export default makeScene2D(function* (view) {
   const line1Ref = createRef<Line>();
   const line2Ref = createRef<Line>();
 
-  const sewingLayoutRef = createRef<Layout>();
   const dahodLayoutRef = createRef<Layout>();
   const otherLayoutRef = createRef<Layout>();
 
@@ -35,38 +28,6 @@ export default makeScene2D(function* (view) {
 
   view.add(
     <Layout>
-      {/* <Layout ref={sewingLayoutRef} opacity={0}>
-        <Circle
-          ref={sewingImgRef}
-          stroke={"blue"}
-          x={600}
-          lineWidth={10}
-          width={500}
-          height={500}
-          zIndex={1}
-        >
-          <Img radius={500} src={sewing} width={490} />
-        </Circle>
-
-        <Rect
-          radius={20}
-          ref={sewingTxtRef}
-          x={600}
-          y={280}
-          width={560}
-          height={100}
-          fill={"blue"}
-        >
-          <Txt
-            fontSize={40}
-            letterSpacing={2}
-            fontFamily={"outfit"}
-            fill={"white"}
-          >
-            Sewing Machine operator
-          </Txt>
-        </Rect>
-      </Layout> */}
 
       <Txt
         opacity={0}
@@ -76,8 +37,7 @@ export default makeScene2D(function* (view) {
         fill={"blue"}
         ref={payslipTxtRef}
         letterSpacing={1}
-        // y={-400}
-        // x={-200}
+
       >
         Highest 3rd month payslip
       </Txt>
@@ -208,7 +168,6 @@ export default makeScene2D(function* (view) {
   );
 
   yield* all(payslipTxtRef().opacity(1, 2), payslipTxtRef().scale(1.6, 2));
-  // yield* sewingLayoutRef().opacity(1, 1);
   yield* all(dahodLayoutRef().opacity(1, 1), payslipTxtRef().opacity(0, 0.5));
 
   yield* all(
@@ -240,15 +199,5 @@ export default makeScene2D(function* (view) {
   );
 
   yield* B2TxtRef().opacity(1, 1);
-
-  //   yield* all(
-  //     mapImgRef().position.y(-600, 1),
-  //     mapImgRef().position.x(300, 1),
-  //     mapImgRef().scale(3, 1),
-  //     txtContainerRef().opacity(1, 2)
-  //   );
-
-  // yield* txtContainerRef().opacity(1, 0.5);
-
   yield* waitFor(1.6);
 });

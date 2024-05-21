@@ -1,13 +1,9 @@
-import { Img, Layout, Txt, makeScene2D, Circle } from "@motion-canvas/2d";
+import { Layout, Txt, makeScene2D, Circle } from "@motion-canvas/2d";
 import { all, createRef, createSignal, waitFor } from "@motion-canvas/core";
-import CountUp from "react-countup";
-import boy from "../../images/boy.png";
-import humidityImage from "../../images/humidityPercentage.png";
+
 import { arc } from "@motion-canvas/2d/lib/utils";
 
 export default makeScene2D(function* (view) {
-  const boyImgRef = createRef<Img>();
-  const humidityImageRef = createRef<Img>();
   const txt1Ref = createRef<Txt>();
   const txt2Ref = createRef<Txt>();
   const txt3Ref = createRef<Txt>();
@@ -18,10 +14,7 @@ export default makeScene2D(function* (view) {
   const txtContainerRef = createRef<Layout>();
   const myCircle1 = createRef<Circle>();
   const myCircle2 = createRef<Circle>();
-  const arc1Ref = createRef<typeof arc>();
-  const arc2Ref = createRef<typeof arc>();
 
-  // Create a signal for the offer letter and salary slips values
   const offerletter = createSignal(0);
   const salaryslips = createSignal(0);
 
