@@ -3,17 +3,20 @@ import { createRef } from "@motion-canvas/core";
 
 import boy from "../../images/boy.png";
 import humidityImage from "../../images/humidityPercentage.png";
+import humidityVideo from "../../videos/humidity-video.mp4";
 
 export default makeScene2D(function* (view) {
   const boyImgRef = createRef<Img>();
-  const humidityVideoRef = createRef<Img>();
+  const humidityImageRef = createRef<Img>();
+  const humidityVideoRef = createRef<Video>();
   const txt1Ref = createRef<Txt>();
   const txt2Ref = createRef<Txt>();
   const txtContainerRef = createRef<Layout>();
 
   view.add(
     <Layout>
-      <Img ref={humidityVideoRef} src={humidityImage} x={-500} />
+      {/* <Img ref={humidityImageRef} src={humidityImage} x={-500} /> */}
+      <Video ref={humidityVideoRef} src={humidityVideo} width={700} x={-500} />
       <Img ref={boyImgRef} src={boy} x={350} />
 
       <Layout
@@ -35,5 +38,7 @@ export default makeScene2D(function* (view) {
       </Layout>
     </Layout>
   );
+
+  humidityVideoRef().play();
   yield* boyImgRef().scale(1, 1).to(1.1, 4);
 });
